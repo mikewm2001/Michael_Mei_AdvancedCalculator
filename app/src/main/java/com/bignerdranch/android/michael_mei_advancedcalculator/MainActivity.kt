@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         val minus: Button = findViewById(R.id.minus)
         val star: Button = findViewById(R.id.star)
         val div: Button = findViewById(R.id.divide)
+        val dot: Button = findViewById(R.id.dot)
         val sqrt: Button = findViewById(R.id.sqrt)
         val equals: Button = findViewById(R.id.equals)
         val solution: EditText = findViewById(R.id.editTextNumberDecimal)
@@ -81,6 +82,11 @@ class MainActivity : AppCompatActivity() {
         }
         zero.setOnClickListener {
             val newNum = getString(R.string.zero)
+            val currentNum = solution.text.toString()
+            solution.setText("$currentNum$newNum")
+        }
+        dot.setOnClickListener {
+            val newNum = getString(R.string.dot)
             val currentNum = solution.text.toString()
             solution.setText("$currentNum$newNum")
         }
